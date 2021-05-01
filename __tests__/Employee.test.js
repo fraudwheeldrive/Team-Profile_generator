@@ -1,5 +1,10 @@
-const employeeInfo = require ('../lib/Employee.js');
+test ('creates employee based on inquierer input', () => {
+    const employee = new Employee();
 
-test ('checks if 10 is equal to 10', () => {
-    expect(employeeInfo(10,10)). toBe(true);
+    expect(employee.name).toEqual(expect.any(String));
+    expect(employee.id).toEqual(expect.any(String));
+    expect(employee.email).toEqual(expect.any(String));
+    expect(employee.email).toEqual(expect.any(String));
 });
+
+module.export = Employee

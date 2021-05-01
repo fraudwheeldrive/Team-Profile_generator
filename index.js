@@ -64,9 +64,9 @@ const fileName = ('./dist/index.html');
                     }
                 }
             },
+    ]
+         
 
-
-            
 //add menu to prompt if you want to add an engineer or an intern 
 //engineer criteria
 //name
@@ -87,11 +87,11 @@ const fileName = ('./dist/index.html');
 
 
 
-/* TODO: Create a function to write README file
+// TODO: Create a function to create a HTML file
   
- function writeToFile(fileName, createReadme) {
+ function writeToFile(fileName, createWebPage) {
     return new Promise((resolve, reject) => {
-      fs.writeFile (fileName, createReadme, err => {
+      fs.writeFile (fileName, createWebPage, err => {
         if (err) {
           reject(err);
           return;
@@ -99,7 +99,7 @@ const fileName = ('./dist/index.html');
   
         resolve({
           ok: true,
-          message: 'Readme File created!'
+          message: 'Profile was created!'
         });
       });
     });
@@ -111,20 +111,20 @@ function init() {
 }
 
 // Function call to initialize app
-init()
-.then(data => {
-    return generateMarkdown(data);
-})
-.then(createReadme => {
-    return writeToFile(fileName, createReadme);
-})
-.then (writeFile => {
-    console.log(writeFile);
-})
-.catch (err => {
-    console.log(err)
-});
+//init()
+//.then(data => {
+//    return generateMarkdown(data);
+//})
+//.then(createReadme => {
+//    return writeToFile(fileName, createReadme);
+//})
+//.then (writeFile => {
+//    console.log(writeFile);
+//})
+//.catch (err => {
+//    console.log(err)
+//});
+// },
+
+
  }
-/*
-
-
