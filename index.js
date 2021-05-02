@@ -7,6 +7,27 @@ const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const fileName = ('./dist/index.html');
 
+
+// prompt user to start inquirer process
+// 1st questions asked to build out employee object 
+//1. name
+//2. email
+//3. employee id
+
+// then prompt which role (use lise)
+//if Manager, need to ask office number and save to array 
+//if Intern, need to add school to employee object and save to array 
+//if Engineer, need to add githubname to employee object to save to array 
+
+// finish initial run through of questions , then prompt if you would like to add 
+//additional employee if yes, loop back through if no, need to generate HTML page in 
+//Dist
+
+
+
+
+
+
     const teamManager  =[
 //1. Team Managers Name 
      {
@@ -66,23 +87,6 @@ const fileName = ('./dist/index.html');
             },
     ]
          
-
-//add menu to prompt if you want to add an engineer or an intern 
-//engineer criteria
-//name
-//id
-//email
-//github username 
-// once added take back to menue 
-
-//intern
-//name
-//id
-//email
-//school
-// taken back to menu
-
-// finish team building, application exits --> builds HTML  to  ./dist/index.html'
 
 
 
