@@ -1,12 +1,14 @@
 const fs = require('fs');
 const inquirer = require ('inquirer');
-
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const fileName = ('./dist/index.html');
+const generatePage = require('./src/page-template');
 
+//array for emplyoee roles 
+const employeeRoll = ["Engineer" , "Intern" , "Manager"];
 
 // prompt user to start inquirer process
 // 1st questions asked to build out employee object 
@@ -23,112 +25,82 @@ const fileName = ('./dist/index.html');
 //additional employee if yes, loop back through if no, need to generate HTML page in 
 //Dist
 
+const teamBuilder = () => {
+    console.log (`
+    ======================
+    Team Profile Generator
+    ======================
+    `);
 
+return inquirer.prompt([
 
-
-
-
-    const teamManager  =[
-//1. Team Managers Name 
-     {
+    {
         type: 'input',
-        name: 'Team Manager Name',
-        message:'what is your name?',
-        validate: nameInput => {
-            if (nameInput) {
+        name: 'name',
+        message: 'Please enter Employees name?',
+        validate: name => {
+            if (name) {
+            return true;
+        } else {
+            console.log('Please enter valid Employees name');
+            return false;
+        }
+    }
+},
+    {
+        type: 'input',
+        name: 'email',
+        message: 'please enter Employees email address',
+        validate: email => {
+            if (email) {
                 return true;
             } else {
-                console.log("please enter the Team Managers Name");
-                return false;
+                console.log('Please enter a valid Employee email address');
+                return  false;
             }
         }
     },
-// 2.Team Managers ID?
     {
-    type: 'input',
-        name: 'id',
-        message:'what is your employee ID',
-        validate: idInput => {
-            if (idInput) {
+
+        //need to ensure this only accepts numbers and not just strings
+        type: 'input',
+        name: 'employeeID',
+        message: 'please enter Employees ID number',
+        validate: employeeID => {
+            if (employeeID) {
                 return true;
             } else {
-                console.log("please enter your Employee ID");
-                return false;
+                console.log('Please enter a valid Employee ID number');
+                return  false;
             }
         }
     },
-// 3.what is your Team Managers Email?
+
     {
-        type: 'input',
-            name: 'email',
-            message:'what is your email Address?',
-            validate: emailInput => {
-                if (eamilInput) {
-                    return true;
-                } else {
-                    console.log("please enter your Email Address");
-                    return false;
-                }
-            }
-        },
-// 4.Team managers Phone Number
-        {
-            type: 'input',
-                name: 'Office Number',
-                message:'Please add Team Managers Office Number ',
-                validate: officeNumInput => {
-                    if (officeNumInput) {
-                        return true;
-                    } else {
-                        console.log("please enter an office number");
-                        return false;
-                    }
-                }
-            },
-    ]
-         
+        type: 'checkbox',
+        name: 'role',
+        message: "please choose the role of the Employee you are adding",
+        choices: employeeRoll,
+    },
 
 
 
 
-// TODO: Create a function to create a HTML file
-  
- function writeToFile(fileName, createWebPage) {
-    return new Promise((resolve, reject) => {
-      fs.writeFile (fileName, createWebPage, err => {
-        if (err) {
-          reject(err);
-          return;
-        }
-  
-        resolve({
-          ok: true,
-          message: 'Profile was created!'
-        });
-      });
-    });
+]);
+};
+teamBuilder().then(answers => console.log(answers));
 
 
-// TODO: Create a function to initialize app
-function init() {
-    return inquirer.prompt(teamManager);
-}
 
-// Function call to initialize app
-//init()
-//.then(data => {
-//    return generateMarkdown(data);
+
+
+
+
+//fs.writeFile('/index.html', pageHTML, err=> {
+//    if (err) throw err;
+
+//    console.log('Team Profile Generated, Thank you.')
 //})
-//.then(createReadme => {
-//    return writeToFile(fileName, createReadme);
-//})
-//.then (writeFile => {
-//    console.log(writeFile);
-//})
-//.catch (err => {
-//    console.log(err)
-//});
-// },
 
 
- }
+
