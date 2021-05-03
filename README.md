@@ -19,9 +19,11 @@ This application is built using Javascript, CSS, HTML as well as NPM Inquirer, n
 * once you have completed the generation process, the app will generate a webpage displaying the roster you created (unfished)
 
 ## screenshots 
-* Jest Tests passed for Objects 
+Test
+![alt text](https://github.com/fraudwheeldrive/Team-Profile_generator/blob/main/assets/images/jest-test.PNG)
 
-## Inquirer Question logc 
+Inquirer Question logic
+![alt text](https://github.com/fraudwheeldrive/Team-Profile_generator/blob/main/assets/images/team%20profile%20generator%201.PNG)
 
 ## Video Demo 
 https://drive.google.com/file/d/13n7bLaBRuzqNwi6IULfQ_3hQZ_7-ynNN/view
