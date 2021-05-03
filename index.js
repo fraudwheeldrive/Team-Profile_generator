@@ -1,14 +1,8 @@
 
 const fs = require('fs');
 const inquirer = require ('inquirer');
-const generatePage = require('./src/page-template');
-
-//const Employee = require("./lib/Employee");
-//const Engineer = require("./lib/Engineer");
-//const Intern = require("./lib/Intern");
-//const Manager = require("./lib/Manager");
-//const fileName = ('./dist/index.html');
 //const generatePage = require('./src/page-template');
+
 
 const teamBuilder = () => {
 
